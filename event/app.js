@@ -1,11 +1,13 @@
 const form = document.querySelector('#form');
+const input = document.querySelector('input');
+const list = document.querySelector('#notes');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('Form submitted');
+    const noteValue = input.value;
+    const newList = document.createElement('li');
+    newList.innerText = noteValue;
+    list.append(newList);
+    input.value = '';
 });
 
-document.querySelector('a').addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('Link clicked');
-});
